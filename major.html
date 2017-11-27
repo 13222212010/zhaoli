@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>group</title>
+    <style>
+a,abbr,acronym,address,applet,article,aside,audio,b,blockquote,big,body,center,canvas,caption,cite,code,command,datalist,dd,del,details,dfn,dl,div,dt,em,embed,fieldset,figcaption,figure,font,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,keygen,label,legend,li,meter,nav,object,ol,output,p,pre,progress,q,s,samp,section,small,span,source,strike,strong,sub,sup,table,tbody,tfoot,thead,th,tr,tdvideo,tt,u,ul,var{background:transparent;border:0 none;font-size:100%;margin:0;padding:0;border:0;outline:0;vertical-align:top}ul{list-style:none}blockquote,q{quotes:none}table,table td{padding:0;border:none;border-collapse:collapse}img{vertical-align:top}embed{vertical-align:top}article,aside,audio,canvas,command,datalist,details,embed,figcaption,figure,footer,header,hgroup,keygen,meter,nav,output,progress,section,source,video{display:block}mark,rp,rt,ruby,summary,time{display:inline}
+body{
+    background:url("images/body-bg.gif") ;
+    font:12px/18px Arial, Helvetica, sans-serif;
+    color: #717171;
+}
+.main-bg{
+    background:url("") no-repeat center 0;
+    height:780px;
+    width:100%;
+}
+.main{
+    margin:-730px auto;
+    height:auto;
+    width:950px;
+}
+.slide{
+    width:950px;
+    height:510px;
+    overflow:hidden;
+    position: relative;
+}
+#ph{
+    width:3800px;
+    height:532px;
+    position: absolute;
+
+}
+.slide>a{
+    display:inline-block;
+    height:462px;
+    width:31px;
+    z-index: 4;
+    position:absolute;
+    top:130px;
+}
+#prev{
+    background: url("images/slider-prev.png/") no-repeat;
+    left:0;
+}
+#next{
+    background:url("images/slider-next.png") no-repeat;
+    right:0;
+}
+#ph img{
+    float:left;
+}
+#text{
+    display:block;
+    height:510px;
+    width:3800px;
+
+    position:absolute;
+}
+#text>li{
+    float: left;
+    width: 950px;
+    height:500px;
+    color:white;
+    display:block;
+    position:relative;
+}
+span{
+    display:block;
+    position:absolute;
+}
+.row-1{
+    font-size:80px;
+    left:250px;
+    top:200px;
+}
+.row-2{
+    font-size:100px;
+    left:150px;
+    top:280px;
+}
+.row-3{
+    font-size:80px;
+    left:250px;
+    top:370px;
+}
+.nav{
+    width:950px;
+    border:1px red;
+    height:70px;
+    padding:30px 0;
+    position:absolute;
+    top:0;
+    background:url("images/header-bg.png");
+}
+.logo{
+    width:187px;
+    height:57px;
+    display:inline-block;
+    padding-left:30px;
+}
+ .logo a{
+    width:187px;
+    height:187px;
+    background:url("images/wl.png") no-repeat ;
+    display:block;
+}
+.menu{
+    display: inline-block;
+    margin-left:40px;
+}
+.menu li{
+    font-size: 20px;
+    float:left;
+    width:130px;
+    height:57px;
+    line-height:57px;
+    text-align:center;
+	  list-style:none;
+
+}
+.menu li a{
+    text-decoration: none;
+    font-size:15px;
+    color:#fff;
+}
+.subs{
+    opacity:0;
+    height:0;
+    width:130px;
+    margin-top: -10px;
+}
+.menu li:hover .subs{
+    opacity:1;
+    -moz-transition:1.2s;
+    -o-transition:1.2s;
+    -webkit-transition:1.2s;
+    transition:1.2s;
+}
+
+.subs li {
+    width:200px;
+    background-color:rgba(0,0,0,.7);
+    height:0px;
+}
+.menu li:hover .subs li{
+    height:40px;
+    -moz-transition:1s;
+    -o-transition:1s;
+    -webkit-transition:1s;
+    transition:1s;
+}
+.subs li a{
+    font-size:13px;
+}
+section{
+    height:100%;
+    background:url("images/body-bg.gif") ;
+}
+.left-item{
+    font-size:30px;
+    color:white;
+    font-family: 'Passion One', cursive;
+    padding:40px 25px 20px;
+
+}
+.left-role{
+    width:70%;
+    position:relative;
+}
+.row{
+    width:100%;
+    padding:0px 30px;
+}
+
+.list{
+    float: left;
+    display: block;
+    width:25%;
+    padding-bottom: 20px;
+    border-bottom: 1px solid ;
+}
+
+dt{
+    color:#b09609;
+    font-size:15px;
+    font-weight:bold;
+    padding:10px 0;
+}
+dd{
+   line-height:18px;
+    font-size:12px;
+}
+.alignright {
+    right: 0;
+    position: absolute;
+    color: white;
+    top: 320px;
+}
+.breeder{
+    width:650px;
+    height:300px;
+    border:1px solid #292929;
+    background:#292929;
+    clear: both;
+    position: relative;
+    left:30px;
+    top:50px;
+}
+.inner{
+    width:80%;
+    position: relative;
+}
+h3{
+    font-family: 'Passion One', cursive;
+    font-size:28px;
+    line-height:28px;
+    color: #fff;
+    margin:20px;
+}
+h4{
+    font-family: 'Passion One', cursive;
+    font-size:24px;
+    line-height:24px;
+    color: #d4d4d4;
+    margin-left:20px;
+    margin-top:-20px;
+}
+.indent{
+    width:400px;
+    font-style:italic;
+    margin-left:30px;
+    margin-top:30px;
+    font-size:15px;
+}
+strong{
+    color:#b09609;
+}
+.author{
+    color:#fff;
+    right:15%;
+    font-size:15px;
+}
+.box-img{
+    right:0;
+    bottom:0;
+    position: absolute;
+}
+.right-role{
+    width:25%;
+    float: right;
+    margin-top:-570px;
+    position:relative;
+}
+.wrap{
+    width:80%;
+    margin:0 auto;
+}
+ .heading-1{
+    color:#b30404;
+     font-size:30px;
+     font-family: 'Passion One', cursive;
+     padding-bottom:20px;
+}
+ .p1 strong{
+     color:#b30404;
+     font-size:15px;
+ }
+ p a{
+     color:white;
+ }
+ .right-up{
+     border-bottom:1px solid;
+     padding-bottom:20px;
+ }
+ .right-down{
+     position:absolute;
+     top:360px;
+ }
+ .right-item{
+     font-size:30px;
+     color:white;
+     font-family: 'Passion One', cursive;
+     padding-bottom: 10px;
+ }
+ .list-1 a{
+     color: #d4d4d4;
+     display: block;
+     font-size:14px;
+     padding:5px 5px;
+ }
+ footer{
+     width:950px;
+     border-top:1px solid;
+     margin-top:100px;
+     position: relative;
+     padding:30px 0;
+ }
+ .foot-left{
+     display:inline-block;
+     width:25%;
+ }
+ .copyright a{
+     color:#717171;
+ }
+ .foot-middle{
+     display:inline-block;
+     width:60%;
+     margin-left:20px;
+ }
+ .wrap-col{
+     float: left;
+     width:33%;
+ }
+ .foot-right{
+     display:inline-block;
+     right:0;
+     position:absolute;
+     top:50px;
+ }
+ .footer-list li{
+     padding:5px;
+ }
+ .footer-list a{
+     color:#717171;
+     font-size:13px;
+ }
+.footer-list li a:hover{
+    color:#fff;
+}
+
+ .social-list img{
+     background:#717171;
+     margin:5px 0;
+ }
+.social-list img:hover{
+    background:darkred;
+    margin:5px 0;
+}
+    </style>
+<body>
+<div class="main-bg"></div>
+<div class="main">
+    <header class="slide">
+            <div id="ph" style="left:0">
+                <img src="images/1.jpg" style="width:950px;height:511px"/>
+                <img src="images/2.jpg" style="width:950px;height:511px"/>
+                <img src="images/3.jpg" style="width:950px;height:511px"/>
+            </div>
+            <ul id="text" style="left:0; display:none">
+                <li><span class="row-1">putting our</span><span class="row-2">heart &amp; soul</span><span class="row-3">into the field</span></li>
+                <li><span class="row-1">we have a strong</span><span class="row-2">agriculture</span><span class="row-3">heritage</span></li>
+                <li><span class="row-1">growing clean</span><span class="row-2">and full of health</span><span class="row-3">products</span></li>
+            </ul>
+            <div class="nav">
+                <div class="logo">
+                    <a href="#"></a>
+                </div>
+                <ul class="menu">
+                    <li><a href="#">产业</a></li>
+                    <li><a href="#">商品</a></li>
+                    <li><a href="#">工艺</a>
+                        <ul class="subs" hidden="true">
+                            <li> <a href="#">MAECENAS FAUCIBUS</a></li>
+                            <li> <a href="#">FUSCE TINCIDUNT</a></li>
+                            <li> <a href="#">TEMPOR EROS</a></li>
+                            <li> <a href="#">UT VIVERRA</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">定价</a></li>
+                    <li><a href="map.html">联络方式</a></li>
+                </ul>
+            </div>
+            <a id="prev"  href="javascript:;"></a>
+            <a id="next"  href="javascript:;"></a>
+    </header>
+    <section>
+        <div class="left-role">
+            <h1 class="left-item">我们的产品:</h1>
+            <ul class="row">
+                <li class="list" >
+                    <img src="images/a.jpg" style="width:150px;height:120px"/>
+                    <dl class="exp-list">
+                        <dt>产品名称</dt>
+						<dd>
+							产品描述AAAAAAAAA AAAAAA AA AA AAAAAAA AA AAAAAAA AAAAAA AAAAAAAAAA
+						</dd>
+                    </dl>
+                </li>
+                <li class="list" >
+                    <img src="images/b.jpg" style="width:150px;height:120px"/>
+                    <dl class="exp-list">
+                        <dt>AAAAAAAA</dt>
+                        <dd>
+                            AAAAAAA AAAAAAAAA AAAAAA AA AA AAAAAAA AA AAAAAAA AAAAAA AAAAAAAAAA
+                        </dd>
+                    </dl>
+                </li>
+                <li class="list" >
+                    <img src="images/c.jpg" style="width:150px;height:120px"/>
+                    <dl class="exp-list">
+                        <dt>AAAAAAAA</dt>
+                        <dd>
+                            AAAAAAA AAAAAAAAA AAAAAA AA AA AAAAAAA AA AAAAAAA AAAAAA AAAAAAAAAA
+                        </dd>
+                    </dl>
+                </li>
+                <li class="list" >
+                    <img src="images/d.jpg" style="width:150px;height:120px"/>
+                    <dl class="exp-list">
+                        <dt>AAAAAAAA</dt>
+                        <dd>
+							AAAAAAA AAAAAAAAA AAAAAA AA AA AAAAAAA AA AAAAAAA AAAAAA AAAAAAAAAA
+                        </dd>
+                    </dl>
+                </li>
+            </ul>
+            <a href="#" class="alignright">阅读更多</a>
+            <article class="breeder">
+                <div class="inner"">
+					<h3>需要一个有价值的建议吗?</h3>
+                    <h4>我们想要提高你的生活和品位!</h4>
+                    <p class=" indent">
+                        赵武灵王门窗营销中心拥有大批专业设计人员，以确保产品研发与国际同步，
+						产品设计以实用、简约、稳固、典雅为基本理念。严格的生产工序出高品质的永固产品，
+						产品从设计到制图、修改、出样、加工、配装全部严格执行国家行业标准要求及企业质量
+						要求。显示赵武灵王门窗营销中心企业对产品品质要求一丝不苟的执着。先进的企业管理，
+						严格的生产工序，是顾客信心的保证，严格的市场管理及完善的售后服务，保证客户的
+						切身权益！
+                    </p>
+						<span class="author" style="display:none">John Smith <i>(breeder)</i></span>
+                </div>
+                <img src="images/z.png" alt="" class="box-img" style="width:205px;height:292px">
+            </article>
+        </div>
+        <div class="right-role">
+            <div class="wrap">
+                <article class="right-up">
+                        <h1 class="heading-1">Welcome!</h1>
+                        <p class="p1">
+                            <strong>
+                                最专业的门窗从这里开始，最新颖的设计从这里开始，最满意的服务从这里开始。
+								赵武灵王门窗营销中心欢迎您的咨询！
+                            </strong>
+                        </p>
+                        <p class="hr-border-1">
+                            主营：AA、AAAAAAAA、AAAAAAAA、AAAAAAAA、
+							AAAAAAAA、AAAAAAAA、AAAAAAAA、AAAAAAAA、
+							AAAAAAAA、AAAAAAAA、AAAAAAAA、AAAAAAAA、
+							AAAAAAAA、AAAAAAAA、AAAAAAAA、AAAAAAAA、
+                        </p>
+                    </article>
+                <a href="#" class="alignright">阅读更多</a>
+                    <article class="right-down">
+                        <h1 class="right-item">我们的程序:</h1>
+                        <ul class="list-1">
+                            <li><a href="#">工艺实践</a></li>
+                            <li><a href="#">技术支持</a></li>
+                            <li><a href="#">技术研究</a></li>
+                            <li><a href="#">技术公益</a></li>
+                            <li><a href="#">监管流程</a></li>
+                            <li><a href="#">持续生产</a></li>
+                            <li><a href="#">学习中心</a></li>
+                        </ul>
+                    </article>
+                </div>
+        </div>
+    </section>
+    <footer>
+        <div class="foot">
+                        <div class="foot-left">
+                            <div class="copyright">
+								这家伙很懒...<br/>什么都没留下<br/>什么都没留下
+                                <div hidden="true">
+									<a rel="nofollow" href="#">Website Template</a> by TemplateMonster.com
+									<a rel="nofollow" href="#">Responsive Themes</a> by Zerotheme.com
+                                </div>
+                            </div>
+                        </div>
+                        <div class="foot-middle">
+                            <div class="wrap-col">
+                                <h5 class="heading-1">档案:</h5>
+                                <ul class="footer-list">
+                                    <li><a href="#">October 2017</a></li>
+                                    <li><a href="#">September 2017</a></li>
+                                    <li><a href="#">August 2017</a></li>
+                                    <li><a href="#">July 2017</a></li>
+                                </ul>
+                            </div>
+                            <div class="wrap-col">
+                                <h5 class="heading-1">链接:</h5>
+                                <ul class="footer-list">
+                                    <li><a href="#">文件</a></li>
+                                    <li><a href="#">实例</a></li>
+                                    <li><a href="#">建议意见</a></li>
+                                    <li><a href="#">支持论坛</a></li>
+                                </ul>
+                            </div>
+                            <div class="wrap-col">
+                                <h5 class="heading-1">支援:</h5>
+                                <ul class="footer-list">
+                                    <li><a href="#">特殊主体</a></li>
+                                    <li><a href="#">免费电话</a></li>
+                                    <li><a href="#">解决方案</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="foot-right">
+                            <div class="wrap-col">
+                                <ul class="social-list">
+                                    <li><a href="#"><img src="images/social-icon-1.png" alt=""></a></li>
+                                    <li><a href="#"><img src="images/social-icon-2.png" alt=""></a></li>
+                                    <li><a href="#"><img src="images/social-icon-3.png" alt=""></a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+</body>
+<script >
+
+window.onload=function(){
+var prev=document.getElementById('prev');
+var next=document.getElementById('next');
+var odiv1=document.getElementById('ph');
+var text=document.getElementById('text');
+//按钮功能
+    prev.onclick=function(){
+        var newleft=parseInt(odiv1.style.left)+950;
+        odiv1.style.left=newleft+'px';
+        text.style.left=newleft+'px';
+        if(odiv1.offsetLeft>0){
+            odiv1.style.left= -1900+'px';
+            text.style.left= -1900+'px';
+        }
+    }
+
+    next.onclick=function next() {
+        var newleft = parseInt(odiv1.style.left) - 950;
+        odiv1.style.left = newleft + 'px';
+        text.style.left=newleft+'px';
+        if (odiv1.offsetLeft<= -2850) {
+            odiv1.style.left = 0 + 'px';
+            text.style.left= 0+'px';
+        }
+    }
+//无限滚动
+    timer=setInterval(function(){
+        odiv1.style.left = parseInt(odiv1.style.left) - 950 + 'px';
+        text.style.left= parseInt(text.style.left) - 950 + 'px';
+        if (odiv1.offsetLeft<= -2850) {
+            odiv1.style.left = 0 + 'px';
+            text.style.left= 0+'px';
+        }
+    },5000)
+}
+</script>
+</html>
